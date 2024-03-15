@@ -4,40 +4,39 @@ package org.intellij.sdk.language;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
 public final class CicodeFileType extends LanguageFileType {
 
-  public static final CicodeFileType INSTANCE = new CicodeFileType();
+    public static final CicodeFileType INSTANCE = new CicodeFileType();
 
-  private CicodeFileType() {
-    super(CicodeLanguage.INSTANCE);
-  }
+    private CicodeFileType() {
+        super(CicodeLanguage.INSTANCE);
+    }
 
-  @NotNull
-  @Override
-  public String getName() {
-    return "Cicode File";
-  }
+    @NotNull
+    @Override
+    public String getName() {
+        return "Cicode File";
+    }
 
-  @NotNull
-  @Override
-  public String getDescription() {
-    return "Cicode language file";
-  }
+    @NotNull
+    @Override
+    public String getDescription() {
+        return "Cicode language file";
+    }
 
-  @NotNull
-  @Override
-  public String getDefaultExtension() {
-    return "cicode";
-  }
+    @NotNull
+    @Override
+    public String getDefaultExtension() {
+        return "ci";
+    }
 
-  @Nullable
-  @Override
-  public Icon getIcon() {
-    return CicodeIcons.FILE;
-  }
+    @NotNull
+    @Override
+    public Icon getIcon() {
+        return CicodeIcons.FILE;
+    }
 
 }

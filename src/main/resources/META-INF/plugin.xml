@@ -3,19 +3,19 @@
 
 <idea-plugin>
 
-  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
-  <id>org.intellij.sdk.language</id>
+    <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+    <id>org.intellij.sdk.language</id>
 
-  <!-- Text to display as name on Settings | Plugin page -->
-  <name>SDK: Cicode Language Sample</name>
+    <!-- Text to display as name on Settings | Plugin page -->
+    <name>SDK: Cicode Language Sample</name>
 
-  <!-- Product and plugin compatibility requirements -->
-  <depends>com.intellij.modules.platform</depends>
-  <depends>com.intellij.java</depends>
+    <!-- Product and plugin compatibility requirements -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
 
-  <!-- Text to display as description on Settings | Plugin page -->
-  <description>
-    <![CDATA[
+    <!-- Text to display as description on Settings | Plugin page -->
+    <description>
+        <![CDATA[
       Demonstrates how to add custom language support to an IntelliJ Platform-based IDE. <br>Defines a new language,
       <i>Cicode language</i> with support for syntax highlighting, annotations, code completion, and other features.
       <br>
@@ -23,49 +23,53 @@
       <a href="https://plugins.jetbrains.com/docs/intellij/custom-language-support-tutorial.html">Custom
       Language Tutorial</a> for more information.
     ]]>
-  </description>
-  <change-notes>
-    <![CDATA[
+    </description>
+    <change-notes>
+        <![CDATA[
       <ul>
         <li><b>2.0.0</b> Convert to Gradle-based plugin.</li>
         <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
       </ul>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- Text to display as company information on Settings | Plugin page -->
-  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+    <!-- Text to display as company information on Settings | Plugin page -->
+    <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <fileType name="Cicode File" implementationClass="org.intellij.sdk.language.CicodeFileType" fieldName="INSTANCE"
-              language="Cicode" extensions="cicode"/>
-    <lang.parserDefinition language="Cicode" implementationClass="org.intellij.sdk.language.CicodeParserDefinition"/>
-    <lang.syntaxHighlighterFactory language="Cicode"
-                                   implementationClass="org.intellij.sdk.language.CicodeSyntaxHighlighterFactory"/>
-    <iconProvider implementation="org.intellij.sdk.language.CicodePropertyIconProvider"/>
-    <colorSettingsPage implementation="org.intellij.sdk.language.CicodeColorSettingsPage"/>
-    <annotator language="JAVA" implementationClass="org.intellij.sdk.language.CicodeAnnotator"/>
-    <codeInsight.lineMarkerProvider language="JAVA"
-                                    implementationClass="org.intellij.sdk.language.CicodeLineMarkerProvider"/>
-    <completion.contributor language="Cicode"
-                            implementationClass="org.intellij.sdk.language.CicodeCompletionContributor"/>
-    <psi.referenceContributor language="JAVA"
-                              implementation="org.intellij.sdk.language.CicodeReferenceContributor"/>
-    <lang.refactoringSupport language="Cicode"
-                             implementationClass="org.intellij.sdk.language.CicodeRefactoringSupportProvider"/>
-    <lang.findUsagesProvider language="Cicode"
-                             implementationClass="org.intellij.sdk.language.CicodeFindUsagesProvider"/>
-    <lang.foldingBuilder language="JAVA" implementationClass="org.intellij.sdk.language.CicodeFoldingBuilder"/>
-    <gotoSymbolContributor implementation="org.intellij.sdk.language.CicodeChooseByNameContributor"/>
-    <lang.psiStructureViewFactory language="Cicode"
-                                  implementationClass="org.intellij.sdk.language.CicodeStructureViewFactory"/>
-    <navbar implementation="org.intellij.sdk.language.CicodeStructureAwareNavbar"/>
-    <lang.formatter language="Cicode" implementationClass="org.intellij.sdk.language.CicodeFormattingModelBuilder"/>
-    <codeStyleSettingsProvider implementation="org.intellij.sdk.language.CicodeCodeStyleSettingsProvider"/>
-    <langCodeStyleSettingsProvider implementation="org.intellij.sdk.language.CicodeLanguageCodeStyleSettingsProvider"/>
-    <lang.commenter language="Cicode" implementationClass="org.intellij.sdk.language.CicodeCommenter"/>
-    <lang.documentationProvider language="Cicode" implementationClass="org.intellij.sdk.language.CicodeDocumentationProvider"/>
-    <spellchecker.support language="Cicode" implementationClass="org.intellij.sdk.language.CicodeSpellcheckingStrategy"/>
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Cicode File" implementationClass="org.intellij.sdk.language.CicodeFileType" fieldName="INSTANCE"
+                  language="Cicode" extensions="ci"/>
+        <lang.parserDefinition language="Cicode"
+                               implementationClass="org.intellij.sdk.language.CicodeParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="Cicode"
+                                       implementationClass="org.intellij.sdk.language.CicodeSyntaxHighlighterFactory"/>
+        <iconProvider implementation="org.intellij.sdk.language.CicodePropertyIconProvider"/>
+        <colorSettingsPage implementation="org.intellij.sdk.language.CicodeColorSettingsPage"/>
+        <annotator language="JAVA" implementationClass="org.intellij.sdk.language.CicodeAnnotator"/>
+        <codeInsight.lineMarkerProvider language="JAVA"
+                                        implementationClass="org.intellij.sdk.language.CicodeLineMarkerProvider"/>
+        <completion.contributor language="Cicode"
+                                implementationClass="org.intellij.sdk.language.CicodeCompletionContributor"/>
+        <psi.referenceContributor language="JAVA"
+                                  implementation="org.intellij.sdk.language.CicodeReferenceContributor"/>
+        <lang.refactoringSupport language="Cicode"
+                                 implementationClass="org.intellij.sdk.language.CicodeRefactoringSupportProvider"/>
+        <lang.findUsagesProvider language="Cicode"
+                                 implementationClass="org.intellij.sdk.language.CicodeFindUsagesProvider"/>
+        <lang.foldingBuilder language="JAVA" implementationClass="org.intellij.sdk.language.CicodeFoldingBuilder"/>
+        <gotoSymbolContributor implementation="org.intellij.sdk.language.CicodeChooseByNameContributor"/>
+        <lang.psiStructureViewFactory language="Cicode"
+                                      implementationClass="org.intellij.sdk.language.CicodeStructureViewFactory"/>
+        <navbar implementation="org.intellij.sdk.language.CicodeStructureAwareNavbar"/>
+        <lang.formatter language="Cicode" implementationClass="org.intellij.sdk.language.CicodeFormattingModelBuilder"/>
+        <codeStyleSettingsProvider implementation="org.intellij.sdk.language.CicodeCodeStyleSettingsProvider"/>
+        <langCodeStyleSettingsProvider
+                implementation="org.intellij.sdk.language.CicodeLanguageCodeStyleSettingsProvider"/>
+        <lang.commenter language="Cicode" implementationClass="org.intellij.sdk.language.CicodeCommenter"/>
+        <lang.documentationProvider language="Cicode"
+                                    implementationClass="org.intellij.sdk.language.CicodeDocumentationProvider"/>
+        <spellchecker.support language="Cicode"
+                              implementationClass="org.intellij.sdk.language.CicodeSpellcheckingStrategy"/>
+    </extensions>
 
 </idea-plugin>

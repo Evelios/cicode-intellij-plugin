@@ -7,6 +7,6 @@ import com.intellij.openapi.util.IconLoader;
 import javax.swing.*;
 
 public class CicodeIcons {
-    public static final Icon FILE = IconLoader.getIcon("/icons/citect_round.ico", CicodeIcons.class);
+    public static final Icon FILE = IconLoader.getIcon("/icons/cicode.png", CicodeIcons.class);
 
 }

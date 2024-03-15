@@ -52,3 +52,6 @@ Defines a new language, _Cicode language_ with support for syntax highlighting, 
 [file:CicodeLanguageCodeStyleSettingsProvider]: ./src/main/java/org/intellij/sdk/language/CicodeLanguageCodeStyleSettingsProvider.java
 [file:CicodeCommenter]: ./src/main/java/org/intellij/sdk/language/CicodeCommenter.java
 
+## Cicode References
+
+* [mgnslndh/NCicode .NET parser library ](https://github.com/mgnslndh/NCicode)
