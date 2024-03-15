@@ -6,27 +6,27 @@ import com.intellij.lang.ASTNode;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import org.intellij.sdk.language.psi.SimpleElementFactory;
-import org.intellij.sdk.language.psi.SimpleProperty;
-import org.intellij.sdk.language.psi.SimpleTypes;
+import org.intellij.sdk.language.psi.CicodeElementFactory;
+import org.intellij.sdk.language.psi.CicodeProperty;
+import org.intellij.sdk.language.psi.CicodeTypes;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-public class SimplePsiImplUtil {
+public class CicodePsiImplUtil {
 
-  public static String getKey(SimpleProperty element) {
-    ASTNode keyNode = element.getNode().findChildByType(SimpleTypes.KEY);
+  public static String getKey(CicodeProperty element) {
+    ASTNode keyNode = element.getNode().findChildByType(CicodeTypes.KEY);
     if (keyNode != null) {
-      // IMPORTANT: Convert embedded escaped spaces to simple spaces
+      // IMPORTANT: Convert embedded escaped spaces to cicode spaces
       return keyNode.getText().replaceAll("\\\\ ", " ");
     } else {
       return null;
     }
   }
 
-  public static String getValue(SimpleProperty element) {
-    ASTNode valueNode = element.getNode().findChildByType(SimpleTypes.VALUE);
+  public static String getValue(CicodeProperty element) {
+    ASTNode valueNode = element.getNode().findChildByType(CicodeTypes.VALUE);
     if (valueNode != null) {
       return valueNode.getText();
     } else {
@@ -34,22 +34,22 @@ public class SimplePsiImplUtil {
     }
   }
 
-  public static String getName(SimpleProperty element) {
+  public static String getName(CicodeProperty element) {
     return getKey(element);
   }
 
-  public static PsiElement setName(SimpleProperty element, String newName) {
-    ASTNode keyNode = element.getNode().findChildByType(SimpleTypes.KEY);
+  public static PsiElement setName(CicodeProperty element, String newName) {
+    ASTNode keyNode = element.getNode().findChildByType(CicodeTypes.KEY);
     if (keyNode != null) {
-      SimpleProperty property = SimpleElementFactory.createProperty(element.getProject(), newName);
+      CicodeProperty property = CicodeElementFactory.createProperty(element.getProject(), newName);
       ASTNode newKeyNode = property.getFirstChild().getNode();
       element.getNode().replaceChild(keyNode, newKeyNode);
     }
     return element;
   }
 
-  public static PsiElement getNameIdentifier(SimpleProperty element) {
-    ASTNode keyNode = element.getNode().findChildByType(SimpleTypes.KEY);
+  public static PsiElement getNameIdentifier(CicodeProperty element) {
+    ASTNode keyNode = element.getNode().findChildByType(CicodeTypes.KEY);
     if (keyNode != null) {
       return keyNode.getPsi();
     } else {
@@ -57,7 +57,7 @@ public class SimplePsiImplUtil {
     }
   }
 
-  public static ItemPresentation getPresentation(final SimpleProperty element) {
+  public static ItemPresentation getPresentation(final CicodeProperty element) {
     return new ItemPresentation() {
       @Nullable
       @Override

@@ -4,12 +4,12 @@ package org.intellij.sdk.language.psi.impl;
 
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import com.intellij.lang.ASTNode;
-import org.intellij.sdk.language.psi.SimpleNamedElement;
+import org.intellij.sdk.language.psi.CicodeNamedElement;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class SimpleNamedElementImpl extends ASTWrapperPsiElement implements SimpleNamedElement {
+public abstract class CicodeNamedElementImpl extends ASTWrapperPsiElement implements CicodeNamedElement {
 
-  public SimpleNamedElementImpl(@NotNull ASTNode node) {
+  public CicodeNamedElementImpl(@NotNull ASTNode node) {
     super(node);
   }
 

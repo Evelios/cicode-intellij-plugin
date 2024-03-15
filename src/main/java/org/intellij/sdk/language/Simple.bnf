@@ -1,30 +1,30 @@
 // Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 {
-  parserClass="org.intellij.sdk.language.parser.SimpleParser"
+  parserClass="org.intellij.sdk.language.parser.CicodeParser"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 
-  psiClassPrefix="Simple"
+  psiClassPrefix="Cicode"
   psiImplClassSuffix="Impl"
   psiPackage="org.intellij.sdk.language.psi"
   psiImplPackage="org.intellij.sdk.language.psi.impl"
 
-  elementTypeHolderClass="org.intellij.sdk.language.psi.SimpleTypes"
-  elementTypeClass="org.intellij.sdk.language.psi.SimpleElementType"
-  tokenTypeClass="org.intellij.sdk.language.psi.SimpleTokenType"
+  elementTypeHolderClass="org.intellij.sdk.language.psi.CicodeTypes"
+  elementTypeClass="org.intellij.sdk.language.psi.CicodeElementType"
+  tokenTypeClass="org.intellij.sdk.language.psi.CicodeTokenType"
 
-  psiImplUtilClass="org.intellij.sdk.language.psi.impl.SimplePsiImplUtil"
+  psiImplUtilClass="org.intellij.sdk.language.psi.impl.CicodePsiImplUtil"
 }
 
-simpleFile ::= item_*
+cicodeFile ::= item_*
 
 private item_ ::= (property|COMMENT|CRLF)
 
 property ::= (KEY? SEPARATOR VALUE?) | KEY {
   pin=3
   recoverWhile="recover_property"
-  mixin="org.intellij.sdk.language.psi.impl.SimpleNamedElementImpl"
-  implements="org.intellij.sdk.language.psi.SimpleNamedElement"
+  mixin="org.intellij.sdk.language.psi.impl.CicodeNamedElementImpl"
+  implements="org.intellij.sdk.language.psi.CicodeNamedElement"
   methods=[getKey getValue getName setName getNameIdentifier getPresentation]
 }
 
